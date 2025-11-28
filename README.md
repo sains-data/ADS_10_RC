@@ -1,4 +1,4 @@
-# # 📘 ADS_2_RC – Analisis Data Statistik (Tugas Kelompok 2)
+# # 📘 ADS_10_RC – Analisis Data Statistik (Tugas Kelompok 2)
 
 ## Daftar Isi
 - [Struktur Repository](#struktur-repository)
@@ -13,12 +13,12 @@
 ## 📁 Struktur Repository
 
 ```
-ADS_2_RC/
+ADS_10_RC/
 ├── README.md                 # Dokumentasi proyek
-├── codeR_2_RC.Rmd            # Script R Markdown untuk analisis ANOVA
-├── data_2_RC.xlsx            # Data jam belajar mahasiswa per kategori keterlibatan
-├── Output_2_RC.pdf           # Folder untuk output analisis
-├── poster_ads_2.pdf          # Poster penelitian
+├── codeR_10_RC.Rmd            # Script R Markdown untuk analisis ANOVA
+├── data_10_RC.xlsx            # Data jam belajar mahasiswa per kategori keterlibatan
+├── Output_10_RC.pdf           # Folder untuk output analisis
+├── poster_ads_10.pdf          # Poster penelitian
 ```
 
 ## Cara Menjalankan Script
@@ -29,7 +29,7 @@ ADS_2_RC/
 
 ### Langkah-langkah
 
-1. **Buka file** `codeR_2_RC.Rmd` menggunakan RStudio
+1. **Buka file** `codeR_10_RC.Rmd` menggunakan RStudio
 
 2. **Instal paket yang dibutuhkan** (jika belum terinstal):
    ```r
