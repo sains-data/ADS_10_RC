@@ -1,4 +1,4 @@
-# # 📘 ADS_10_RC – Analisis Data Statistik (Tugas Kelompok 2)
+# # 📘 ADS_10_RC – Analisis Data Statistik (Tugas Kelompok 10)
 
 ## Daftar Isi
 - [Struktur Repository](#struktur-repository)
