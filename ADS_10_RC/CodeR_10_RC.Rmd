@@ -1,6 +1,6 @@
 ---
 title: "Untitled"
-author: "Muhammad Harvinsyah"
+author: "Kelompok 10"
 date: "2025-11-25"
 output: html_document
 ---
@@ -110,3 +110,4 @@ qqnorm(residuals_model)
 qqline(residuals_model, col = "red")
 
 ```
+
