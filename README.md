@@ -33,7 +33,7 @@ ADS_10_RC/
 
 2. **Instal paket yang dibutuhkan** (jika belum terinstal):
    ```r
-   install.packages(c("readxl", "dplyr", "tidyr"))
+   install.packages(c("readxl", "dplyr", "car", "ggplot2"))
    ```
 
 3. **Pastikan dataset tersedia** di folder `data/dataset.xlsx`
