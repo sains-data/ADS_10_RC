@@ -1,0 +1,112 @@
+---
+title: "Untitled"
+author: "Muhammad Harvinsyah"
+date: "2025-11-25"
+output: html_document
+---
+
+```{r}
+
+# 1. Import Data
+
+library(readxl)
+library(car)
+library(dplyr)
+library(ggplot2)
+
+
+data <- read_excel("C:/Users/Asus Indonesia/Downloads/dataset nilai akhir mata kuliah ADS.xlsx")
+
+# Ambil nilai per kelas
+RA <- data[[1]]
+RB <- data[[2]]
+RC <- data[[3]]
+
+# Buat data long format
+nilai <- c(RA, RB, RC)
+kelas <- factor(c(rep("RA", length(RA)),
+                  rep("RB", length(RB)),
+                  rep("RC", length(RC))))
+
+df <- data.frame(nilai, kelas)
+
+
+# ===============================
+# 2. Uji Normalitas
+# ===============================
+
+# --- Normalitas per kelompok (Shapiro-Wilk)
+shapiro.test(RA)
+shapiro.test(RB)
+shapiro.test(RC)
+
+# --- Normalitas residual model ANOVA
+model <- aov(nilai ~ kelas, data = df)
+residuals_model <- residuals(model)
+
+shapiro.test(residuals_model)
+
+# 3. Uji Homogenitas Varians
+
+# --- Levene's Test (disarankan)
+leveneTest(nilai ~ kelas, data = df)
+
+# --- Bartlett Test (sensitif terhadap non-normalitas)
+bartlett.test(nilai ~ kelas)
+
+# 4. One-Way ANOVA
+anova_result <- summary(model)
+anova_result
+
+# 5. Post Hoc Tukey (Opsional)
+TukeyHSD(model)
+
+# 6. VISUALISASI DATA
+
+library(ggplot2)
+library(dplyr)
+
+# ---- A. BOXPlot per Kelas ----
+ggplot(df, aes(x = kelas, y = nilai, fill = kelas)) +
+  geom_boxplot() +
+  labs(
+    title = "Boxplot Nilai Akhir ADS per Kelas",
+    x = "Kelas",
+    y = "Nilai Akhir"
+  ) +
+  theme_minimal()
+
+# ---- B. Rata-Rata + SD ----
+mean_plot <- df %>%
+  group_by(kelas) %>%
+  summarise(
+    Mean = mean(nilai),
+    SD = sd(nilai)
+  )
+
+ggplot(mean_plot, aes(x = kelas, y = Mean, group = 1)) +
+  geom_line() +
+  geom_point(size = 3) +
+  geom_errorbar(aes(ymin = Mean , ymax = Mean ), width = 0) +
+  labs(
+    title = "Rata-Rata Nilai Akhir",
+    x = "Kelas",
+    y = "Rata-Rata Nilai"
+  ) +
+  theme_minimal()
+
+# ---- C. Density Plot ----
+ggplot(df, aes(x = nilai, color = kelas, fill = kelas)) +
+  geom_density(alpha = 0.3) +
+  labs(
+    title = "Density Plot Nilai Akhir ADS",
+    x = "Nilai",
+    y = "Kepadatan"
+  ) +
+  theme_minimal()
+
+# ---- D. QQ Plot Residual ANOVA ----
+qqnorm(residuals_model)
+qqline(residuals_model, col = "red")
+
+```
