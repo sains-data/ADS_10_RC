@@ -54,7 +54,7 @@ ADS_10_RC/
 |-------|--------|
 | **readxl** | Membaca file Excel (.xlsx) yang berisi data penelitian |
 | **dplyr** | Pembersihan data, seleksi kolom, manipulasi data, dan filtering |
-| **tidyr** | Mengubah data dari format wide ke long (pivoting) sebelum analisis ANOVA |
+| **car** | Uji homogenitas varians (Levene Test) |
 | **ggplot2** | Untuk memvisualisasikan data |
 
 ---
@@ -124,7 +124,7 @@ Jika asumsi terpenuhi, maka hasil ANOVA valid untuk digunakan dalam penarikan ke
 
 6. **Visualisasi Grafik**
    - **Boxplot** nilai akhir per kelas.
-   - **Plot Rata-Rata + SD** per kelas.
+   - **Plot Rata-Rata** per kelas.
    - **Density Plot** distribusi nilai untuk RA, RB, dan RC.
    - **QQ Plot Residual** untuk mengevaluasi asumsi normalitas residual ANOVA.
 
