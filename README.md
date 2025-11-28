@@ -79,7 +79,7 @@ Dataset berisi **nilai akhir mata kuliah Algoritma dan Struktur Data (ADS)** dar
   - uji normalitas per kelas
   - uji homogenitas varians (Levene dan Bartlett)
   - ANOVA One-Way
-  - visualisasi (boxplot, density plot, mean ± SD)
+  - visualisasi (boxplot, density plot, mean)
 
 ---
 
@@ -105,7 +105,7 @@ Jika asumsi terpenuhi, maka hasil ANOVA valid untuk digunakan dalam penarikan ke
 ## Output yang Dihasilkan
 
 1. **Statistik Deskriptif**
-   - Rata-rata (Mean), Standar Deviasi (SD), dan jumlah sampel (N) untuk setiap kelas (RA, RB, RC).
+   - Rata-rata (Mean), dan jumlah sampel (N) untuk setiap kelas (RA, RB, RC).
    - Output dihitung menggunakan `dplyr::summarise()`.
 
 2. **Hasil Uji Normalitas**
